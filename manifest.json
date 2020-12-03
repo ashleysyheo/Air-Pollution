@@ -1,0 +1,14 @@
+{
+    "short_name": "AQ",
+    "name": "Air Quality Tracker",
+    "start_url": "",
+    "display": "standalone",
+    "permissions": {
+        "audio-capture": {
+            "description": "Required to capture audio using getUserMedia()"
+        },
+        "video-capture": {
+            "description": "Required to capture video using getUserMedia()"
+        }
+    }
+}
