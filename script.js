@@ -24,14 +24,13 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 fetch("http://api.airvisual.com/v2/nearest_city?key=e398d09b-6ba4-4b55-94d6-e8b73574352b")
     .then(response => response.json())
     .then(data => {
-        console.log(data);
         const aqiData = data.data;
         
         const city = aqiData.city;
         const country = aqiData.country;
         const aqi = aqiData.current.pollution.aqius;
 
-        // aqi info 
+        // aqi info  
         const aqiInfo = document.querySelector('#aqi-info');
 
         // particle: PM 10 
@@ -62,10 +61,6 @@ fetch("http://api.airvisual.com/v2/nearest_city?key=e398d09b-6ba4-4b55-94d6-e8b7
         countryInfo.className = 'country';
         aqiInfo.appendChild(countryInfo);
  
-        console.log(city, country, aqi);
-
-        const main = document.querySelector('.main');
-
         setTimeout(() => {
             aqiInfo.classList.add('fade-in');
         }, 3000)
@@ -74,15 +69,30 @@ fetch("http://api.airvisual.com/v2/nearest_city?key=e398d09b-6ba4-4b55-94d6-e8b7
 
         aqiInfo.addEventListener('click', e => {
             if (infoOn) {
-                console.log('no info!')
                 infoOn = false;
                 aqiInfo.classList.add('fade-in');
             } else {
-                console.log('info!')
                 infoOn = true;
                 aqiInfo.classList.remove('fade-in');
             }
-        })
+        });
+
+        const filterNoise = document.querySelector('.filter-noise');
+        const filterColor = document.querySelector('.filter-color');
+
+        if (aqi > 50 && aqi <= 100) {
+            filterNoise.classList.add('filter-moderate--noise');
+            filterColor.classList.add('filter-moderate--color')
+        } else if (aqi > 100 && aqi <= 150) {
+            filterNoise.classList.add('filter-sensitive--noise');
+            filterColor.classList.add('filter-sensitive--color')
+        } else if (aqi > 150 && aqi <= 200) {
+            filterNoise.classList.add('filter-unhealthy--noise');
+            filterColor.classList.add('filter-unhealthy--color')
+        } else if (aqi > 200) {
+            filterNoise.classList.add('filter-veryunhealthy--noise');
+            filterColor.classList.add('filter-veryunhealthy--color')
+        }
     })
     .catch(function (error) {
         console.log("error:", error)

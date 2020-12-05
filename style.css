@@ -71,6 +71,7 @@ body {
 video {
     position: absolute;
     width: 100vw;
+    transform: rotateY(180deg);
     z-index: 1;
 }
 
@@ -90,6 +91,60 @@ video {
     height: 100vh;
     background-color: #EFEBE2;
     opacity: 20%;
+}
+
+.filter-sensitive--noise {
+    position: absolute;
+    z-index: 100;
+    background-image: url("noise/unhealthy-sensitive.png");
+    width: 100vw;
+    height: 100vh;
+    mix-blend-mode: multiply;
+}
+
+.filter-sensitive--color {
+    position: absolute;
+    z-index: 99;
+    width: 100vw;
+    height: 100vh;
+    background-color: #DEDAD0;
+    opacity: 30%;
+}
+
+.filter-unhealthy--noise {
+    position: absolute;
+    z-index: 100;
+    background-image: url("noise/unhealthy.png");
+    width: 100vw;
+    height: 100vh;
+    mix-blend-mode: multiply;
+}
+
+.filter-unhealthy--color {
+    position: absolute;
+    z-index: 99;
+    width: 100vw;
+    height: 100vh;
+    background-color: #B8B3A6;
+    opacity: 40%;
+}
+
+.filter-veryunhealthy--noise {
+    position: absolute;
+    z-index: 100;
+    background-image: url("noise/very-unhealthy.png");
+    width: 100vw;
+    height: 100vh;
+    mix-blend-mode: multiply;
+}
+
+.filter-veryunhealthy--color {
+    position: absolute;
+    z-index: 99;
+    width: 100vw;
+    height: 100vh;
+    background-color: #9F9B91;
+    opacity: 50%;
 }
 
 @media screen and (max-width: 600px) {
