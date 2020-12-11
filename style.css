@@ -25,7 +25,8 @@ body {
     padding-left: 9rem;
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,0.24833683473389356) 0%, rgba(255,255,255,1) 100%);
-    transition: all .7s ease-in;
+    transition: all 1s ease-in;
+    pointer-events: none;
 }
 
 #aqi-info.fade-in {
@@ -67,6 +68,18 @@ body {
     overflow: hidden;
 }
 
+.btn {
+    position: absolute;
+    z-index: 150;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 2rem;
+    font-size: 2rem;
+    border: 1px solid black;
+    border-radius: 4rem;
+}
 
 video {
     position: absolute;
@@ -155,5 +168,10 @@ video {
     video {
         width: auto;
         height: 100vh;
+    }
+
+    .btn {
+        width: calc(100vw - 6rem);
+        font-size: 1.6rem;
     }
 }
