@@ -28,7 +28,7 @@ let countryInfo;
 let filterNoise = document.querySelector('.filter-noise');
 let filterColor = document.querySelector('.filter-color');
 
-fetch("https://api.airvisual.com/v2/nearest_city?key=e398d09b-6ba4-4b55-94d6-e8b73574352b")
+fetch('https://api.airvisual.com/v2/nearest_city?key=6f2530f7-f187-4341-b0a1-75e7744681d1')
     .then(response => response.json())
     .then(data => {
         console.log(data);
@@ -110,7 +110,7 @@ fetch("https://api.airvisual.com/v2/nearest_city?key=e398d09b-6ba4-4b55-94d6-e8b
 const button = document.querySelector('.btn');
 button.addEventListener('click', () =>
 
-    fetch("https://api.airvisual.com/v2/countries?&key=e398d09b-6ba4-4b55-94d6-e8b73574352b")
+    fetch("https://api.airvisual.com/v2/countries?&key=6f2530f7-f187-4341-b0a1-75e7744681d1")
         .then(response => response.json())
         .then(data => {
             let countryLength = data.data.length;
@@ -118,7 +118,7 @@ button.addEventListener('click', () =>
             let randomCountryIdx = Math.floor(Math.random() * countryLength);
             let randomCountry = country[randomCountryIdx].country;
 
-            fetch(`https://api.airvisual.com/v2/states?country=${randomCountry}&key=e398d09b-6ba4-4b55-94d6-e8b73574352b`)
+            fetch(`https://api.airvisual.com/v2/states?country=${randomCountry}&key=6f2530f7-f187-4341-b0a1-75e7744681d1`)
                 .then(response => response.json())
                 .then(data => {
                     let stateLength = data.data.length; 
@@ -126,7 +126,7 @@ button.addEventListener('click', () =>
                     let randomStateIdx = Math.floor(Math.random() * stateLength);
                     let randomState = state[randomStateIdx].state;
 
-                    fetch(`https://api.airvisual.com/v2/cities?state=${randomState}&country=${randomCountry}&key=e398d09b-6ba4-4b55-94d6-e8b73574352b`)
+                    fetch(`https://api.airvisual.com/v2/cities?state=${randomState}&country=${randomCountry}&key=6f2530f7-f187-4341-b0a1-75e7744681d1`)
                         .then(response => response.json())
                         .then(data => {
 
@@ -135,7 +135,7 @@ button.addEventListener('click', () =>
                             let randomCityIdx = Math.floor(Math.random() * cityLength);
                             let randomCity = city[randomCityIdx].city;
 
-                            fetch(`https://api.airvisual.com/v2/city?city=${randomCity}&state=${randomState}&country=${randomCountry}&key=e398d09b-6ba4-4b55-94d6-e8b73574352b`)
+                            fetch(`https://api.airvisual.com/v2/city?city=${randomCity}&state=${randomState}&country=${randomCountry}&key=6f2530f7-f187-4341-b0a1-75e7744681d1`)
                                 .then(response => response.json())
                                 .then(data => {
                                     let aqiData = data.data;
@@ -159,7 +159,15 @@ button.addEventListener('click', () =>
                                     } else if (aqi > 200) {
                                         filterNoise.className = 'filter-noise filter-veryunhealthy--noise';
                                         filterColor.className = 'filter-color filter-veryunhealthy--color';
+                                    } else {
+                                        filterNoise.className = 'filter-noise';
+                                        filterColor.className = 'filter-color';
                                     }
+                                    const aqiInfo = document.querySelector('#aqi-info');
+                                    aqiInfo.classList.remove("fade-in");
+                                    setTimeout(() => {
+                                        aqiInfo.classList.add('fade-in');
+                                    }, 4000)
                                 })
                                 .catch(function (error) {
                                     console.log("error:", error)
