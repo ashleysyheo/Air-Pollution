@@ -1,0 +1,484 @@
+{
+    "cities" : [
+        {
+            "country" : "India",
+            "state" : "Delhi",
+            "city" : "Delhi"
+        },
+        {
+            "country" : "Kyrgyzstan",
+            "state" : "Bishkek",
+            "city" : "Bishkek"
+        },
+        {
+            "country" : "Mongolia",
+            "state" : "Ulaanbaatar",
+            "city" : "Ulaanbaatar"
+        },
+        {
+            "country" : "China",
+            "state" : "Shanghai",
+            "city" : "Shanghai"
+        },
+        {
+            "country" : "Bangladesh",
+            "state" : "Dhaka",
+            "city" : "Dhaka"
+        },
+        {
+            "country" : "India",
+            "state" : "West Bengal",
+            "city" : "Kolkata"
+        },
+        {
+            "country" : "China",
+            "state" : "Hubei",
+            "city" : "Wuhan"
+        },
+        {
+            "country" : "India",
+            "state" : "Maharashtra",
+            "city" : "Mumbai"
+        },
+        {
+            "country" : "Pakistan",
+            "state" : "Sindh",
+            "city" : "Karachi"
+        },
+        {
+            "country" : "Bosnia Herzegovina",
+            "state" : "Federation of B&H",
+            "city" : "Sarajevo"
+        },
+        {
+            "country" : "Myanmar",
+            "state" : "Yangon",
+            "city" : "Yangon"
+        },
+        {
+            "country" : "Serbia",
+            "state" : "Central Serbia",
+            "city" : "Belgrade"
+        },
+        {
+            "country" : "South Korea",
+            "state" : "Seoul",
+            "city" : "Seoul"
+        },
+        {
+            "country" : "Nepal",
+            "state" : "Central Region",
+            "city" : "Kathmandu"
+        },
+        {
+            "country" : "Italy",
+            "state" : "Lombardy",
+            "city" : "Milano"
+        },
+        {
+            "country" : "Vietnam",
+            "state" : "Hanoi",
+            "city" : "Hanoi"
+        },
+        {
+            "country" : "Afghanistan",
+            "state" : "Kabul",
+            "city" : "Kabul"
+        },
+        {
+            "country" : "China",
+            "state" : "Zhejiang",
+            "city" : "Hangzhou"
+        },
+        {
+            "country" : "China",
+            "state" : "Sichuan",
+            "city" : "Chengdu"
+        },
+        {
+            "country" : "Kosovo",
+            "state" : "Pristina",
+            "city" : "Pristina"
+        },
+        {
+            "country" : "China",
+            "state" : "Guangdong",
+            "city" : "Shenzhen"
+        },
+        {
+            "country" : "South Korea",
+            "state" : "Gyeonggi-do",
+            "city" : "Incheon"
+        },
+        {
+            "country" : "Vietnam",
+            "state" : "Ho Chi Minh City",
+            "city" : "Ho Chi Minh City"
+        },
+        {
+            "country" : "China",
+            "state" : "Beijing",
+            "city" : "Beijing"
+        },
+        {
+            "country" : "China",
+            "state" : "Chongqing",
+            "city" : "Chongqing"
+        },
+        {
+            "country" : "Thailand",
+            "state" : "Bangkok",
+            "city" : "Bangkok"
+        },
+        {
+            "country" : "Croatia",
+            "state" : "Zagreb",
+            "city" : "Zagreb"
+        },
+        {
+            "country" : "USA",
+            "state" : "Michigan",
+            "city" : "Detroit"
+        },
+        {
+            "country" : "China",
+            "state" : "Guangdong",
+            "city" : "Guangzhou"
+        },
+        {
+            "country" : "Mexico",
+            "state" : "Mexico City",
+            "city" : "Mexico City"
+        },
+        {
+            "country" : "South Korea",
+            "state" : "Gyeongsangnam-do",
+            "city" : "Busan"
+        },
+        {
+            "country" : "Poland",
+            "state" : "Lesser Poland Voivodeship",
+            "city" : "Krakow"
+        },
+        {
+            "country" : "Ukraine",
+            "state" : "Kyiv",
+            "city" : "Kyiv"
+        },
+        {
+            "country" : "China",
+            "state" : "Liaoning",
+            "city" : "Shenyang"
+        },
+        {
+            "country" : "USA",
+            "state" : "Utah",
+            "city" : "Salt Lake City"
+        },
+        {
+            "country" : "Taiwan",
+            "state" : "Kaohsiung",
+            "city" : "Kaohsiung"
+        },
+        {
+            "country" : "Kazakhstan",
+            "state" : "Nur-Sultan",
+            "city" : "Nur-Sultan"
+        },
+        {
+            "country" : "Iran",
+            "state" : "Tehran",
+            "city" : "Tehran"
+        },
+        {
+            "country" : "Poland",
+            "state" : "Mazovia",
+            "city" : "Warsaw"
+        },
+        {
+            "country" : "Germany",
+            "state" : "Berlin",
+            "city" : "Berlin"
+        },
+        {
+            "country" : "Poland",
+            "state" : "Lower Silesia",
+            "city" : "Wroclaw"
+        },
+        {
+            "country" : "USA",
+            "state" : "New York",
+            "city" : "New York City"
+        },
+        {
+            "country" : "USA",
+            "state" : "California",
+            "city" : "Los Angeles"
+        },
+        {
+            "country" : "Cambodia",
+            "state" : "Phnom Penh",
+            "city" : "Phnom Penh"
+        },
+        {
+            "country" : "Pakistan",
+            "state" : "Punjab",
+            "city" : "Lahore"
+        },
+        {
+            "country" : "Peru",
+            "state" : "Lima",
+            "city" : "Lima"
+        },
+        {
+            "country" : "Hong Kong SAR",
+            "state" : "Hong Kong",
+            "city" : "Hong Kong"
+        },
+        {
+            "country" : "Colombia",
+            "state" : "Bogota D.C.",
+            "city" : "Bogota"
+        },
+        {
+            "country" : "Thailand",
+            "state" : "Chiang Mai",
+            "city" : "Chiang Mai"
+        },
+        {
+            "country" : "Canada",
+            "state" : "Ontario",
+            "city" : "Toronto"
+        },
+        {
+            "country" : "Russia",
+            "state" : "Moscow",
+            "city" : "Moscow"
+        },
+        {
+            "country" : "United Arab Emirates",
+            "state" : "Dubai",
+            "city" : "Dubai"
+        },
+        {
+            "country" : "Malaysia",
+            "state" : "Kuala Lumpur",
+            "city" : "Kuala Lumpur"
+        },
+        {
+            "country" : "Japan",
+            "state" : "Osaka",
+            "city" : "Osaka"
+        },
+        {
+            "country" : "Indonesia",
+            "state" : "Jakarta",
+            "city" : "Jakarta"
+        },
+        {
+            "country" : "Israel",
+            "state" : "Tel Aviv",
+            "city" : "Tel Aviv-Yafo"
+        },
+        {
+            "country" : "Hungary",
+            "state" : "Central Hungary",
+            "city" : "Budapest"
+        },
+        {
+            "country" : "Kuwait",
+            "state" : "Al Asimah",
+            "city" : "Kuwait City"
+        },
+        {
+            "country" : "Japan",
+            "state" : "Aichi",
+            "city" : "Nagoya"
+        },
+        {
+            "country" : "Chile",
+            "state" : "Santiago Metropolitan",
+            "city" : "Santiago"
+        },
+        {
+            "country" : "Singapore",
+            "state" : "Singapore",
+            "city" : "Singapore"
+        },
+        {
+            "country" : "Switzerland",
+            "state" : "Bern",
+            "city" : "Bern"
+        },
+        {
+            "country" : "South Africa",
+            "state" : "Gauteng",
+            "city" : "Johannesburg"
+        },
+        {
+            "country" : "Japan",
+            "state" : "Tokyo",
+            "city" : "Tokyo"
+        },
+        {
+            "country" : "Saudi Arabia",
+            "state" : "Ar Riyadh",
+            "city" : "Riyadh"
+        },
+        {
+            "country" : "Germany",
+            "state" : "Bavaria",
+            "city" : "Munich"
+        },
+        {
+            "country" : "Japan",
+            "state" : "Kyoto",
+            "city" : "Kyoto"
+        },
+        {
+            "country" : "Russia",
+            "state" : "Krasnoyarsk Krai",
+            "city" : "Krasnoyarsk"
+        },
+        {
+            "country" : "Japan",
+            "state" : "Hyogo",
+            "city" : "Kobe"
+        },
+        {
+            "country" : "Austria",
+            "state" : "Vienna",
+            "city" : "Vienna"
+        },
+        {
+            "country" : "Belgium",
+            "state" : "Brussels Capital",
+            "city" : "Brussels"
+        },
+        {
+            "country" : "Slovakia",
+            "state" : "Bratislava",
+            "city" : "Bratislava"
+        },
+        {
+            "country" : "Brazil",
+            "state" : "Sao Paulo",
+            "city" : "Sao Paulo"
+        },
+        {
+            "country" : "Netherlands",
+            "state" : "North Holland",
+            "city" : "Amsterdam"
+        },
+        {
+            "country" : "United Kingdom",
+            "state" : "England",
+            "city" : "London"
+        },
+        {
+            "country" : "Netherlands",
+            "state" : "South Holland",
+            "city" : "Rotterdam"
+        },
+        {
+            "country" : "Finland",
+            "state" : "Uusimaa",
+            "city" : "Helsinki"
+        },
+        {
+            "country" : "Israel",
+            "state" : "Jerusalem",
+            "city" : "Jerusalem"
+        },
+        {
+            "country" : "Taiwan",
+            "state" : "Taipei",
+            "city" : "Taipei"
+        },
+        {
+            "country" : "Bulgaria",
+            "state" : "Sofia",
+            "city" : "Sofia"
+        },
+        {
+            "country" : "Czech Republic",
+            "state" : "Praha",
+            "city" : "Prague"
+        },
+        {
+            "country" : "USA",
+            "state" : "Colorado",
+            "city" : "Denver"
+        },
+        {
+            "country" : "Malaysia",
+            "state" : "Sarawak",
+            "city" : "Kuching"
+        },
+        {
+            "country" : "France",
+            "state" : "Ile-de-France",
+            "city" : "Paris"
+        },
+        {
+            "country" : "Spain",
+            "state" : "Madrid",
+            "city" : "Madrid"
+        },
+        {
+            "country" : "Norway",
+            "state" : "Oslo",
+            "city" : "Oslo"
+        },
+        {
+            "country" : "France",
+            "state" : "Auvergne-Rhone-Alpes",
+            "city" : "Lyon"
+        },
+        {
+            "country" : "USA",
+            "state" : "Oregon",
+            "city" : "Portland"
+        },
+        {
+            "country" : "USA",
+            "state" : "Washington",
+            "city" : "Seattle"
+        },
+        {
+            "country" : "Australia",
+            "state" : "New South Wales",
+            "city" : "Sydney"
+        },
+        {
+            "country" : "USA",
+            "state" : "California",
+            "city" : "San Francisco"
+        },
+        {
+            "country" : "Canada",
+            "state" : "British Columbia",
+            "city" : "Vancouver BC"
+        },
+        {
+            "country" : "Australia",
+            "state" : "ACT",
+            "city" : "Canberra"
+        },
+        {
+            "country" : "Australia",
+            "state" : "Victoria",
+            "city" : "Melbourne"
+        },
+        {
+            "country" : "North Macedonia",
+            "state" : "Skopje",
+            "city" : "Skopje"
+        },
+        {
+            "country" : "Uzbekistan",
+            "state" : "Toshkent Shahri",
+            "city" : "Tashkent"
+        }
+    ]
+}

@@ -107,79 +107,55 @@ fetch('https://api.airvisual.com/v2/nearest_city?key=6f2530f7-f187-4341-b0a1-75e
     })
 
 const button = document.querySelector('.btn');
-button.addEventListener('click', () =>
-
-    fetch("https://api.airvisual.com/v2/countries?&key=6f2530f7-f187-4341-b0a1-75e7744681d1")
+button.addEventListener('click', () => {
+    fetch('./city.json')
         .then(response => response.json())
         .then(data => {
-            let countryLength = data.data.length;
-            let country = data.data;
-            let randomCountryIdx = Math.floor(Math.random() * countryLength);
-            let randomCountry = country[randomCountryIdx].country;
+            let citiesLength = data.cities.length;
+            let randomCityIdx = Math.floor(Math.random() * citiesLength);
 
-            fetch(`https://api.airvisual.com/v2/states?country=${randomCountry}&key=6f2530f7-f187-4341-b0a1-75e7744681d1`)
+            let city = data.cities[randomCityIdx].city;
+            let state = data.cities[randomCityIdx].state;
+            let country = data.cities[randomCityIdx].country;
+            
+            fetch(`https://api.airvisual.com/v2/city?city=${city}&state=${state}&country=${country}&key=6f2530f7-f187-4341-b0a1-75e7744681d1`)
                 .then(response => response.json())
                 .then(data => {
-                    let stateLength = data.data.length; 
-                    let state = data.data;
-                    let randomStateIdx = Math.floor(Math.random() * stateLength);
-                    let randomState = state[randomStateIdx].state;
+                    let aqiData = data.data;
+                    let aqi = aqiData.current.pollution.aqius;
+                    let city = aqiData.city;
+                    let country = aqiData.country;
 
-                    fetch(`https://api.airvisual.com/v2/cities?state=${randomState}&country=${randomCountry}&key=6f2530f7-f187-4341-b0a1-75e7744681d1`)
-                        .then(response => response.json())
-                        .then(data => {
+                    if (aqi > 50 && aqi <= 100) {
+                        aqiInfo.className = 'moderate';
+                        filterNoise.className = 'filter-noise filter-moderate--noise';
+                        filterColor.className = 'filter-color filter-moderate--color';
+                    } else if (aqi > 100 && aqi <= 150) {
+                        aqiInfo.className = 'sensitive';
+                        filterNoise.className = 'filter-noise filter-sensitive--noise';
+                        filterColor.className = 'filter-color filter-sensitive--color';
+                    } else if (aqi > 150 && aqi <= 200) {
+                        aqiInfo.className = 'unhealthy';
+                        filterNoise.className = 'filter-noise filter-unhealthy--noise';
+                        filterColor.className = 'filter-color filter-unhealthy--color';
+                    } else if (aqi > 200) {
+                        aqiInfo.className = 'very-unhealthy';
+                        filterNoise.className = 'filter-noise filter-veryunhealthy--noise';
+                        filterColor.className = 'filter-color filter-veryunhealthy--color';
+                    } else {
+                        aqiInfo.className = 'good';
+                        filterNoise.className = 'filter-noise';
+                        filterColor.className = 'filter-color';
+                    }
 
-                            let cityLength = data.data.length;
-                            let city = data.data;
-                            let randomCityIdx = Math.floor(Math.random() * cityLength);
-                            let randomCity = city[randomCityIdx].city;
+                    indexInfo.innerHTML = aqi;
+                    cityInfo.innerHTML = city;
+                    countryInfo.innerHTML = country;
 
-                            fetch(`https://api.airvisual.com/v2/city?city=${randomCity}&state=${randomState}&country=${randomCountry}&key=6f2530f7-f187-4341-b0a1-75e7744681d1`)
-                                .then(response => response.json())
-                                .then(data => {
-                                    let aqiData = data.data;
-                                    let aqi = aqiData.current.pollution.aqius;
-                                    let city = aqiData.city;
-                                    let country = aqiData.country;
-
-                                    if (aqi > 50 && aqi <= 100) {
-                                        aqiInfo.className = 'moderate';
-                                        filterNoise.className = 'filter-noise filter-moderate--noise';
-                                        filterColor.className = 'filter-color filter-moderate--color';
-                                    } else if (aqi > 100 && aqi <= 150) {
-                                        aqiInfo.className = 'sensitive';
-                                        filterNoise.className = 'filter-noise filter-sensitive--noise';
-                                        filterColor.className = 'filter-color filter-sensitive--color';
-                                    } else if (aqi > 150 && aqi <= 200) {
-                                        aqiInfo.className = 'unhealthy';
-                                        filterNoise.className = 'filter-noise filter-unhealthy--noise';
-                                        filterColor.className = 'filter-color filter-unhealthy--color';
-                                    } else if (aqi > 200) {
-                                        aqiInfo.className = 'very-unhealthy';
-                                        filterNoise.className = 'filter-noise filter-veryunhealthy--noise';
-                                        filterColor.className = 'filter-color filter-veryunhealthy--color';
-                                    } else {
-                                        aqiInfo.className = 'good';
-                                        filterNoise.className = 'filter-noise';
-                                        filterColor.className = 'filter-color';
-                                    }
-
-                                    indexInfo.innerHTML = aqi;
-                                    cityInfo.innerHTML = city;
-                                    countryInfo.innerHTML = country;
-
-                                    aqiInfo.classList.remove("fade-in");
-                                    setTimeout(() => {
-                                        aqiInfo.classList.add('fade-in');
-                                    }, 4000)
-                                })
-                                .catch(function (error) {
-                                    console.log("error:", error)
-                                })
-                        }) 
-                        .catch(function (error) {
-                            console.log("error:", error)
-                        })
+                    aqiInfo.classList.remove("fade-in");
+                    setTimeout(() => {
+                        aqiInfo.classList.add('fade-in');
+                    }, 4000)
                 })
                 .catch(function (error) {
                     console.log("error:", error)
@@ -188,4 +164,4 @@ button.addEventListener('click', () =>
         .catch(function (error) {
             console.log("error:", error)
         })
-);
+});
