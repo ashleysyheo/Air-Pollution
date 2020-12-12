@@ -119,6 +119,18 @@ video {
     z-index: 1;
 }
 
+.filter-sensitive--blur {
+    filter: blur(1.5px);
+}
+
+.filter-unhealthy--blur {
+    filter: blur(2px);
+}
+
+.filter-veryunhealthy--blur {
+    filter: blur(3px);
+}
+
 .filter-moderate--noise {
     position: absolute;
     z-index: 100;
@@ -199,6 +211,7 @@ video {
     video {
         width: auto;
         height: 100vh;
+        transform: rotateY(0);
     }
 
     .btn {

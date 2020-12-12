@@ -1,5 +1,5 @@
 if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    var constraints = {
+    let constraints = {
         audio: false,
         video: {
             facingMode: 'environment'
@@ -8,7 +8,7 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 
     navigator.mediaDevices.getUserMedia(constraints)
         .then(function (stream) {
-            var video = document.querySelector('video');
+            let video = document.querySelector('video');
             video.srcObject = stream;
             video.onloadedmetadata = function (e) {
                 video.play();
@@ -28,6 +28,7 @@ let countryInfo;
 let filterNoise = document.querySelector('.filter-noise');
 let filterColor = document.querySelector('.filter-color');
 let aqiInfo = document.querySelector('#aqi-info');
+let video = document.querySelector('video');
 
 let infoOn = false;
 const main = document.querySelector('.filter-noise');
@@ -87,15 +88,18 @@ fetch('https://api.airvisual.com/v2/nearest_city?key=6f2530f7-f187-4341-b0a1-75e
             filterNoise.classList.add('filter-moderate--noise');
             filterColor.classList.add('filter-moderate--color')
         } else if (aqi > 100 && aqi <= 150) {
+            video.classList.add('filter-sensitive--blur');
             aqiInfo.classList.add('sensitive');
             filterNoise.classList.add('filter-sensitive--noise');
             filterColor.classList.add('filter-sensitive--color')
         } else if (aqi > 150 && aqi <= 200) {
+            video.classList.add('filter-unhealthy--blur');
             aqiInfo.classList.add('unhealthy');
             filterNoise.classList.add('filter-unhealthy--noise');
             filterColor.classList.add('filter-unhealthy--color')
         } else if (aqi > 200) {
             aqiInfo.classList.add('very-unhealthy');
+            video.classList.add('filter-veryunhealthy--blur');
             filterNoise.classList.add('filter-veryunhealthy--noise');
             filterColor.classList.add('filter-veryunhealthy--color')
         } else {
@@ -127,23 +131,28 @@ button.addEventListener('click', () => {
                     let country = aqiData.country;
 
                     if (aqi > 50 && aqi <= 100) {
+                        video.className = '';
                         aqiInfo.className = 'moderate';
                         filterNoise.className = 'filter-noise filter-moderate--noise';
                         filterColor.className = 'filter-color filter-moderate--color';
                     } else if (aqi > 100 && aqi <= 150) {
+                        video.className = 'filter-sensitive--blur';
                         aqiInfo.className = 'sensitive';
                         filterNoise.className = 'filter-noise filter-sensitive--noise';
                         filterColor.className = 'filter-color filter-sensitive--color';
                     } else if (aqi > 150 && aqi <= 200) {
+                        video.className = 'filter-unhealthy--blur';
                         aqiInfo.className = 'unhealthy';
                         filterNoise.className = 'filter-noise filter-unhealthy--noise';
                         filterColor.className = 'filter-color filter-unhealthy--color';
                     } else if (aqi > 200) {
+                        video.className = 'filter-veryunhealthy--blur';
                         aqiInfo.className = 'very-unhealthy';
                         filterNoise.className = 'filter-noise filter-veryunhealthy--noise';
                         filterColor.className = 'filter-color filter-veryunhealthy--color';
                     } else {
                         aqiInfo.className = 'good';
+                        video.className = '';
                         filterNoise.className = 'filter-noise';
                         filterColor.className = 'filter-color';
                     }
